@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoPremium Használtautó-kereskedés</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="kinalatunk.html">
+    <link rel="stylesheet" href="kinalatunk.css">
+</head>
+<body>
+    <!-- HTML rész -->
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-car"></i>
+                    <h1>AutoPremium</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="../index/index.html">Kezdőlap</a></li>
+                        <li><a href="../kínálatunk/kinalatunk.html" style="text-decoration: underline; color: ff7d00;">Kínálatunk</a></li>
+                        <li><a href="../szolgáltatásaink/szolgaltatásaink.html">Szolgáltatások</a></li>
+                        <li><a href="../rolunk/rolunk.html">Rólunk</a></li>
+                        <li><a href="../kapcsolat/kapcsolat.html"  >Kapcsolat</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Prémium Használtautók</h2>
+                <p>Minőségi, gondosan kiválasztott használt autóink várják, hogy Ön is gazdagabbá tegye velük mindennapjait. Fedezze fel kínálatunkat!</p>
+                <a href="#" class="btn">Autóink megtekintése</a>
+            </div>
+        </section>
+
+        <div class="filter-bar">
+            <div class="filter-item">
+                <label for="price-filter">Ár szerint</label>
+                <select id="price-filter">
+                    <option value="all">Összes ár</option>
+                    <option value="0-5">0-5 millió Ft</option>
+                    <option value="5-10">5-10 millió Ft</option>
+                    <option value="10-15">10-15 millió Ft</option>
+                    <option value="15+">15+ millió Ft</option>
+                </select>
+            </div>
+            <div class="filter-item">
+                <label for="type-filter">Kategória</label>
+                <select id="type-filter">
+                    <option value="all">Összes kategória</option>
+                    <option value="sedan">Sedan</option>
+                    <option value="suv">SUV</option>
+                    <option value="sport">Sport</option>
+                    <option value="kombi">Kombi</option>
+                </select>
+            </div>
+            <div class="filter-item">
+                <label for="fuel-filter">Üzemanyag</label>
+                <select id="fuel-filter">
+                    <option value="all">Összes üzemanyag</option>
+                    <option value="benzin">Benzin</option>
+                    <option value="diesel">Dízel</option>
+                    <option value="hybrid">Hibrid</option>
+                    <option value="electric">Elektromos</option>
+                </select>
+            </div>
+            <div class="filter-item">
+                <label for="search">Keresés</label>
+                <input type="text" id="search" placeholder="Autó neve...">
+            </div>
+        </div>
+
+        <h2 class="section-title">Kiemelt járműveink</h2>
+
+        <div class="cars-grid" id="cars-container">
+            <!-- Autók dinamikusan betöltve lesznek -->
+        </div>
+
+        <section class="features">
+            <h2 class="section-title">Miért válasszon minket?</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Minőségi Garancia</h3>
+                    <p>Minden járművünk átmegy egy 150 pontos ellenőrzésen, hogy a legmagasabb minőségi standardoknak megfeleljen.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <h3>Legjobb Ár</h3>
+                    <p>Versenyképes árakat és különböző finanszírozási lehetőségeket kínálunk, hogy megfeleljen a költségvetésének.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-user-clock"></i>
+                    <h3>Élethosszig Tartó Támogatás</h3>
+                    <p>Kapcsolatunk nem ér véget a vásárlással - élethosszig tartó támogatást nyújtunk járművéhez.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-tools"></i>
+                    <h3>Szerviz Csomagok</h3>
+                    <p>Testre szabott szerviz csomagok, hogy járműve tökéletes állapotban maradjon.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact">
+            <h2 class="section-title">Lépjen kapcsolatba velünk</h2>
+            <form class="contact-form" id="contact-form">
+                <div class="form-group">
+                    <label for="name">Teljes Név</label>
+                    <input type="text" id="name" placeholder="Az Ön neve" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Cím</label>
+                    <input type="email" id="email" placeholder="Az Ön email címe" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Telefonszám</label>
+                    <input type="tel" id="phone" placeholder="Az Ön telefonszáma">
+                </div>
+                <div class="form-group">
+                    <label for="interest">Érdeklődés</label>
+                    <select id="interest">
+                        <option value="">Válasszon jármű típust</option>
+                        <option value="suv">SUV</option>
+                        <option value="sedan">Sedan</option>
+                        <option value="sports">Sportautó</option>
+                        <option value="luxury">Luxusautó</option>
+                    </select>
+                </div>
+                <div class="form-group full-width">
+                    <label for="message">Üzenet</label>
+                    <textarea id="message" placeholder="Írja meg üzenetét..." required></textarea>
+                </div>
+                <div class="form-group full-width">
+                    <button type="submit" class="btn">Üzenet küldése</button>
+                </div>
+            </form>
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AutoPremium</h3>
+                    <p>Megbízható partner minőségi használt járművekhez. Egyszerű és problémamentes autóvásárlást biztosítunk.</p>
+                    <p>&copy; 2023 AutoPremium. Minden jog fenntartva.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Gyorslinkek</h3>
+                    <ul>
+                        <li><a href="../index/index.html">Kezdőlap</a></li>
+                        <li><a href="../kínálatunk/kinalatunk.html">Kínálatunk</a></li>
+                        <li><a href="../szolgáltatásaink/szolgaltatásaink.html">Szolgáltatások</a></li>
+                        <li><a href="../rolunk/rolunk.html"  >Rólunk</a></li>
+                        <li><a href="../kapcsolat/kapcsolat.html" >Kapcsolat</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Elérhetőség</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 1234 Autó utca, Budapest</p>
+                    <p><i class="fas fa-phone"></i> +36 1 234 5678</p>
+                    <p><i class="fas fa-envelope"></i> info@autopremium.hu</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>Készítette szeretettel az autórajongók számára</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // JavaScript rész
+        document.addEventListener('DOMContentLoaded', function() {
+            // Autók adatai
+            const cars = [
+                {
+                    id: 1,
+                    name: "2020 BMW 5 Series",
+                    image: "https://images.unsplash.com/photo-1542362567-b07e54358753?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                    mileage: "65.000 km",
+                    fuel: "Hybrid",
+                    type: "sedan",
+                    price: "15.490.000 Ft"
+                },
+                {
+                    id: 2,
+                    name: "2021 Audi Q7",
+                    image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                    mileage: "42.500 km",
+                    fuel: "Benzin",
+                    type: "suv",
+                    price: "18.990.000 Ft"
+                },
+                {
+                    id: 3,
+                    name: "2019 Porsche 911",
+                    image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                    mileage: "32.800 km",
+                    fuel: "Benzin",
+                    type: "sport",
+                    price: "32.750.000 Ft"
+                },
+                {
+                    id: 4,
+                    name: "2020 Mercedes E-Class",
+                    image: "https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                    mileage: "58.200 km",
+                    fuel: "Dízel",
+                    type: "sedan",
+                    price: "14.990.000 Ft"
+                },
+                {
+                    id: 5,
+                    name: "2021 Volkswagen Golf",
+                    image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                    mileage: "38.500 km",
+                    fuel: "Benzin",
+                    type: "kombi",
+                    price: "8.990.000 Ft"
+                },
+                {
+                    id: 6,
+                    name: "2022 Skoda Octavia",
+                    image: "https://images.unsplash.com/photo-1601268859287-9cec8a74e9f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                    mileage: "22.300 km",
+                    fuel: "Dízel",
+                    type: "kombi",
+                    price: "9.490.000 Ft"
+                },
+                {
+                    id: 7,
+                    name: "2020 Audi A4",
+                    image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                    mileage: "45.600 km",
+                    fuel: "Dízel",
+                    type: "sedan",
+                    price: "12.990.000 Ft"
+                },
+                {
+                    id: 8,
+                    name: "2021 BMW X5",
+                    image: "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                    mileage: "39.800 km",
+                    fuel: "Benzin",
+                    type: "suv",
+                    price: "21.990.000 Ft"
+                },
+                {
+                    id: 9,
+                    name: "2019 Volvo XC60",
+                    image: "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                    mileage: "72.400 km",
+                    fuel: "Dízel",
+                    type: "suv",
+                    price: "14.490.000 Ft"
+                },
+                {
+                    id: 10,
+                    name: "2022 Mercedes C-Class",
+                    image: "https://images.unsplash.com/photo-1592198084033-aade902d1aae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                    mileage: "18.900 km",
+                    fuel: "Hybrid",
+                    type: "sedan",
+                    price: "16.990.000 Ft"
+                }
+            ];
+
+            // Autók megjelenítése
+            const carsContainer = document.getElementById('cars-container');
+            
+            function displayCars(carsToDisplay) {
+                carsContainer.innerHTML = '';
+                
+                carsToDisplay.forEach(car => {
+                    const carCard = document.createElement('div');
+                    carCard.className = 'car-card';
+                    carCard.innerHTML = `
+                        <div class="car-image">
+                            <img src="${car.image}" alt="${car.name}">
+                        </div>
+                        <div class="car-details">
+                            <h3>${car.name}</h3>
+                            <div class="car-info">
+                                <span><i class="fas fa-tachometer-alt"></i> ${car.mileage}</span>
+                                <span><i class="fas fa-gas-pump"></i> ${car.fuel}</span>
+                                <span><i class="fas fa-car"></i> ${car.type}</span>
+                            </div>
+                            <div class="car-price">${car.price}</div>
+                            <a href="#" class="btn">Részletek</a>
+                        </div>
+                    `;
+                    carsContainer.appendChild(carCard);
+                });
+            }
+            
+            // Összes autó megjelenítése eleinte
+            displayCars(cars);
+            
+            // Szűrők implementálása
+            const priceFilter = document.getElementById('price-filter');
+            const typeFilter = document.getElementById('type-filter');
+            const fuelFilter = document.getElementById('fuel-filter');
+            const searchInput = document.getElementById('search');
+            
+            function filterCars() {
+                const priceValue = priceFilter.value;
+                const typeValue = typeFilter.value;
+                const fuelValue = fuelFilter.value;
+                const searchValue = searchInput.value.toLowerCase();
+                
+                const filteredCars = cars.filter(car => {
+                    // Ár szűrés
+                    if (priceValue !== 'all') {
+                        const priceNum = parseInt(car.price.replace(/\D/g, ''));
+                        if (priceValue === '0-5' && priceNum > 5000000) return false;
+                        if (priceValue === '5-10' && (priceNum <= 5000000 || priceNum > 10000000)) return false;
+                        if (priceValue === '10-15' && (priceNum <= 10000000 || priceNum > 15000000)) return false;
+                        if (priceValue === '15+' && priceNum <= 15000000) return false;
+                    }
+                    
+                    // Típus szűrés
+                    if (typeValue !== 'all' && car.type !== typeValue) return false;
+                    
+                    // Üzemanyag szűrés
+                    if (fuelValue !== 'all' && car.fuel !== fuelValue) return false;
+                    
+                    // Keresés
+                    if (searchValue && !car.name.toLowerCase().includes(searchValue)) return false;
+                    
+                    return true;
+                });
+                
+                displayCars(filteredCars);
+            }
+            
+            // Eseményfigyelők a szűrőkhöz
+            priceFilter.addEventListener('change', filterCars);
+            typeFilter.addEventListener('change', filterCars);
+            fuelFilter.addEventListener('change', filterCars);
+            searchInput.addEventListener('input', filterCars);
+            
+            // Kapcsolati űrlap kezelése
+            const contactForm = document.getElementById('contact-form');
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+                
+                if (name === '' || email === '' || message === '') {
+                    alert('Kérjük, töltse ki az összes kötelező mezőt.');
+                    return;
+                }
+                
+                if (!isValidEmail(email)) {
+                    alert('Kérjük, érvényes email címet adjon meg.');
+                    return;
+                }
+                
+                // Sikeres üzenet elküldése
+                alert('Köszönjük megkeresését! Hamarosan felvesszük Önnel a kapcsolatot.');
+                contactForm.reset();
+            });
+            
+            function isValidEmail(email) {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(email);
+            }
+        });
+    </script>
+</body>
+</html>
